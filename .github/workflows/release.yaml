@@ -58,7 +58,6 @@ jobs:
   dockerize:
     name: Docker image
     needs:
-      - test
       - build
 
     runs-on: ubuntu-latest
