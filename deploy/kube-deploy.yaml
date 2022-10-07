@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplelogger
+  labels:
+    app: simplelogger
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simplelogger
+  template:
+    metadata:
+      labels:
+        app: simplelogger
+    spec:
+      containers:
+       - name: simplelogger
+         image: danesparza/simplelogger:1.0.4
+         ports:
+          - containerPort: 8080
+            protocol: TCP
